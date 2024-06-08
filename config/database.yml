@@ -1,0 +1,27 @@
+default: &default
+  username: postgres
+  password: 
+  port: 5050
+  # host: localhost
+  adapter: postgresql
+  encoding: unicode
+
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: phronesis_development
+  username: postgres
+  password: 
+  port: 5050
+  # host: localhost
+ 
+test:
+  <<: *default
+  database: phronesis_test
+
+production:
+  <<: *default
+  database: phronesis_development
+  username: postgres
+  password: 5050
